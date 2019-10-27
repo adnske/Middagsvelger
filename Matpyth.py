@@ -1,8 +1,13 @@
 import random
+import calendar
+from datetime import date
 
 # variabler
 mat = ()
 middager = []
+dato = date.today()
+
+dagNo = calendar.day_name[dato.weekday()]
 
 # oppretter lister for ulike type middager, har to for å få en lettere oversikt over sunne/usunne.
 sunneMiddager = ['Spagetti', 'Fiskegrateng', 'Kylling', 'Gryterett', 'Suppe']
@@ -23,25 +28,21 @@ pizza = ['pizzadeig', 'ost', 'tomatsaus', 'pepperoni']
 hamburger = ['burgerbrød', 'hamburger', 'ost', 'mais', 'sylteagurk', 'ketchup']
 
 #Lister for å skille mellom hverdag og helg.
-manTors = ['mandag', 'tirsdag', 'onsdag', 'torsdag']
-helg = ['lørdag', 'søndag']
+manTors = ['Monday', 'Tuesday', 'Wednesday', 'Thursday']
+helg = ['Saturday', 'Sunday']
 
-# tar en input fra bruker og setter det til små bokstaver.
-dag = input("Hvilken dag er det idag?").lower()
 
 #matcher input mot listene manTors, helg og stringen "fredag".
 #Setter deretter variabelen mat til å være lik en tilfeldig valgt matrett i middager.
-if dag in manTors:
+if dagNo in manTors:
     mat = random.choice(middager[0:5])
 
-elif dag in helg:
+elif dagNo in helg:
     mat = random.choice(middager[5:7])
 
-elif dag == 'fredag':
+elif dagNo == 'Friday':
     mat = (middager[7])
 
-else:
-    print('Vær obs på at du må skrive dagen korrekt, vennligst prøv igjen')
 
 
 #Printer ut svaret på hva som skal spises, og henter ingrediensene fra listen til de forskjellige middagene.
@@ -68,6 +69,10 @@ elif mat == 'Hamburger':
 
 elif mat == 'Taco':
     print('Du skal spise', mat, 'som hver fredag og du må derfor kjøpe:', ', '.join(taco))
+
+
+
+
 
 
 
