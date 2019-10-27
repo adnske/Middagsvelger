@@ -63,7 +63,7 @@ elif mat == 'Tomatsuppe':
 elif mat == 'Pizza':
     print('Du skal spise', mat, 'og du må derfor kjøpe:', ', '.join(pizza))
 
-elif mat == 'Hamburg':
+elif mat == 'Hamburger':
     print('Du skal spise', mat, 'og du må derfor kjøpe:', ', '.join(hamburger))
 
 elif mat == 'Taco':
